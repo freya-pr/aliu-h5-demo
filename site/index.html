@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <meta name="theme-color" content="#9d1420" />
+  <meta name="description" content="阿留状元教育精华家长课 H5 报名演示" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239d1420'/%3E%3Cpath d='M12 27 32 13l20 14-20 14z' fill='none' stroke='%23f4c66a' stroke-width='5' stroke-linejoin='round'/%3E%3Cpath d='M20 35v11c7 6 17 6 24 0V35' fill='none' stroke='%23fff8e9' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <title>阿留状元教育｜精华家长课</title>
+  <style>
+    :root{--red:#a30f1d;--red-dark:#690c17;--red-bright:#d82c2b;--gold:#f4c66a;--cream:#fff8e9;--ink:#2c1b1a;--muted:#7b6762;--green:#19a85b;--safe-bottom:env(safe-area-inset-bottom,0px)}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html{scroll-behavior:smooth;background:#3d0a10}
+    body{margin:0;color:var(--ink);background:#f7f1e7;font-family:"PingFang SC","Microsoft YaHei",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.55}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    img{display:block;max-width:100%}
+    .page{width:100%;max-width:520px;min-height:100vh;margin:0 auto;overflow:hidden;background:var(--cream);box-shadow:0 0 60px #21060b80}
+    .topbar{height:48px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;color:#fff;background:#730b16;font-size:13px}
+    .brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.04em}.brand-mark{width:26px;height:26px;display:grid;place-items:center;border:1px solid #f5d88a;transform:rotate(45deg)}.brand-mark i{width:10px;height:10px;border:2px solid #f5d88a;display:block}
+    .topbar-badge{padding:4px 9px;border:1px solid #ffffff38;border-radius:999px;background:#ffffff10}
+    .hero{position:relative;min-height:620px;overflow:hidden;color:#fff;background:#a3131e}
+    .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% center}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#7d0b16 0%,#8b0c18ed 25%,#8b0c18a8 52%,#8b0c1810 76%),linear-gradient(0deg,#6e0915 0%,transparent 35%)}
+    .hero-copy{position:relative;z-index:2;width:64%;padding:48px 0 0 24px;text-shadow:0 2px 12px #50071280}
+    .eyebrow{display:inline-flex;align-items:center;gap:6px;margin-bottom:17px;color:#ffeab8;font-size:13px;font-weight:700;letter-spacing:.12em}.eyebrow:before{content:"";width:22px;height:1px;background:var(--gold)}
+    .hero h1{margin:0;color:#fff7df;font-family:"STSong","Songti SC",serif;font-size:44px;line-height:1.05;letter-spacing:-.04em}.hero h1 span{display:block;margin-top:9px;color:#f8cf76;font-size:36px}
+    .hero-sub{margin:20px 0 18px;color:#fff1db;font-size:16px;font-weight:600;line-height:1.7}
+    .hero-points{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.hero-points span{padding:5px 9px;border:1px solid #ffe5ad52;border-radius:4px;background:#4f07145e;color:#ffedc4;font-size:12px;backdrop-filter:blur(3px)}
+    .price{display:flex;align-items:flex-end;gap:8px}.price strong{color:#ffd06b;font:800 42px/.9 Arial,sans-serif}.price strong small{font-size:20px}.price del{color:#e8b8b5;font-size:13px}.price-note{margin-top:10px;color:#f6d5cf;font-size:12px}
+    .trust-ribbon{position:absolute;z-index:3;left:18px;right:18px;bottom:18px;display:grid;grid-template-columns:repeat(3,1fr);padding:13px 8px;border:1px solid #ffe9b057;border-radius:14px;background:#500912b8;backdrop-filter:blur(9px)}
+    .trust-ribbon div{text-align:center;border-right:1px solid #ffffff24}.trust-ribbon div:last-child{border:0}.trust-ribbon b{display:block;color:#ffe3a2;font-size:16px}.trust-ribbon small{color:#f8d6d1;font-size:11px}
+    section{padding:42px 20px}.section-head{text-align:center;margin-bottom:25px}.section-kicker{margin:0 0 6px;color:#b31d26;font-size:12px;font-weight:800;letter-spacing:.18em}.section-head h2{margin:0;font-family:"STSong","Songti SC",serif;font-size:28px;line-height:1.3}.section-head p{margin:10px auto 0;max-width:370px;color:var(--muted);font-size:14px}
+    .pain{background:#fff}.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.pain-card{min-height:138px;padding:17px 15px;border:1px solid #efe2d7;border-radius:12px;background:#fffaf3;box-shadow:0 8px 24px #6b1a1408}.pain-icon{width:34px;height:34px;display:grid;place-items:center;margin-bottom:12px;border-radius:10px;color:#fff;background:#b5222b;font-weight:800}.pain-card h3{margin:0 0 5px;font-size:16px}.pain-card p{margin:0;color:#846e67;font-size:12px;line-height:1.65}
+    .course{background:#8e111c;color:#fff}.course .section-kicker{color:#f6cc73}.course .section-head h2{color:#fff4dc}.course .section-head p{color:#efcfd0}.days{display:grid;gap:12px}.day{display:grid;grid-template-columns:66px 1fr;overflow:hidden;border:1px solid #ffffff21;border-radius:13px;background:#ffffff0e}.day-no{display:grid;place-items:center;padding:14px 5px;color:#ffe09a;background:#5f0a14;font-size:13px;font-weight:800}.day-body{padding:14px 15px}.day-body h3{margin:0 0 6px;color:#fff5dc;font-size:17px}.day-body p{margin:0;color:#eecfd0;font-size:13px}.course-summary{display:flex;gap:8px;margin-top:15px}.course-summary span{flex:1;padding:10px 5px;border-radius:8px;text-align:center;color:#6d1419;background:#f7d67f;font-size:12px;font-weight:700}
+    .gifts{background:#fff9ee}.gift-card{overflow:hidden;border:1px solid #ead9c4;border-radius:17px;background:#fff;box-shadow:0 16px 45px #6e1d1617}.gift-card img{width:100%;height:auto}.gift-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px}.gift-caption b{font-size:16px}.gift-caption span{color:#a02228;font-size:13px;font-weight:700;white-space:nowrap}
+    .teacher{padding-bottom:32px;background:#fff}.teacher-panel{position:relative;padding:24px 20px;border-radius:16px;color:#fff;background:linear-gradient(135deg,#6f0b15,#a51824)}.teacher-panel:after{content:"育";position:absolute;right:9px;bottom:-28px;color:#fff1;font:700 116px/1 "STSong",serif}.teacher-name{position:relative;z-index:1;display:flex;align-items:center;gap:14px}.teacher-avatar{width:58px;height:58px;border:2px solid #f1cc77;border-radius:50%;object-fit:cover;object-position:72% 26%}.teacher-name h3{margin:0;color:#ffe5a4;font:700 23px/1.2 "STSong",serif}.teacher-name p{margin:4px 0 0;color:#f2d2d0;font-size:12px}.credentials{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:19px}.credentials span{padding:10px;border:1px solid #ffffff20;border-radius:8px;background:#ffffff0b;color:#ffeada;font-size:12px}
+    .voices{padding-top:30px;background:#f5eadc}.voice{margin-bottom:12px;padding:16px;border-radius:12px;background:#fff;box-shadow:0 8px 24px #5820150b}.voice-head{display:flex;align-items:center;gap:10px;margin-bottom:9px}.avatar-letter{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;color:#fff;background:#b8252d;font-size:13px;font-weight:700}.voice-head b{font-size:14px}.voice-head span{margin-left:auto;color:#d79d2d;font-size:12px}.voice p{margin:0;color:#6e5a54;font-size:13px}.promise{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:22px;text-align:center}.promise div{padding:14px 5px;border:1px solid #e7d7c5;border-radius:10px;background:#fff9ef}.promise b{display:block;color:#a31a23;font-size:19px}.promise span{color:#7d6861;font-size:11px}
+    .faq{background:#fff}.faq details{border-bottom:1px solid #eee1d6}.faq summary{padding:17px 4px;list-style:none;font-weight:700}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";float:right;color:#a51b24;font-size:20px}.faq details[open] summary:after{content:"−"}.faq details p{margin:-4px 0 16px;padding-right:25px;color:#74615c;font-size:13px}
+    .closing{padding:32px 20px 118px;text-align:center;color:#fff;background:#730b15}.closing h2{margin:0 0 8px;color:#ffe8aa;font:700 27px/1.4 "STSong",serif}.closing p{margin:0;color:#e8c5c5;font-size:13px}
+    .sticky{position:fixed;z-index:20;left:50%;bottom:0;width:min(520px,100%);transform:translateX(-50%);display:flex;align-items:center;gap:13px;padding:10px 14px calc(10px + var(--safe-bottom));border-top:1px solid #ead9c9;background:#fffdf9e8;box-shadow:0 -7px 28px #4b0c1321;backdrop-filter:blur(12px)}
+    .sticky-price{min-width:94px}.sticky-price small{display:block;color:#8c7570;font-size:10px}.sticky-price b{color:#c52027;font:800 28px/1 Arial,sans-serif}.sticky-price b i{font-size:15px;font-style:normal}.buy-btn{flex:1;height:52px;border:0;border-radius:9px;color:#fff;background:linear-gradient(90deg,#d62f2e,#a20f1d);box-shadow:0 8px 20px #ac15283d;font-weight:800;letter-spacing:.03em}.buy-btn span{display:block;font-size:11px;font-weight:500;opacity:.85}
+    .mask{position:fixed;z-index:60;inset:0;display:none;align-items:flex-end;justify-content:center;background:#26070c99;backdrop-filter:blur(2px)}.mask.show{display:flex}.sheet{width:min(520px,100%);max-height:92vh;overflow:auto;padding:0 20px calc(22px + var(--safe-bottom));border-radius:22px 22px 0 0;background:#fff;box-shadow:0 -20px 60px #26070c48;animation:sheetIn .25s ease-out}@keyframes sheetIn{from{transform:translateY(40px);opacity:.3}}
+    .sheet-handle{width:38px;height:4px;margin:10px auto 5px;border-radius:9px;background:#ddd}.sheet-head{display:flex;align-items:center;justify-content:space-between;padding:7px 0 15px}.sheet-head h2{margin:0;font-size:20px}.close{width:34px;height:34px;border:0;border-radius:50%;color:#765f59;background:#f5eee8;font-size:20px}
+    .steps{display:flex;justify-content:space-between;margin:0 -3px 20px}.step{position:relative;flex:1;text-align:center;color:#ab9993;font-size:11px}.step:before{content:"";position:absolute;top:12px;left:0;right:0;height:2px;background:#eadfd8}.step:first-child:before{left:50%}.step:last-child:before{right:50%}.step i{position:relative;z-index:1;width:26px;height:26px;display:grid;place-items:center;margin:0 auto 5px;border:2px solid #ded1ca;border-radius:50%;background:#fff;font-style:normal;font-weight:700}.step.active{color:#a51a23;font-weight:700}.step.active:before{background:#c4232b}.step.active i{border-color:#c4232b;color:#fff;background:#c4232b}
+    .stage{display:none}.stage.active{display:block}.order-card{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:12px;border-radius:12px;background:#fff7ec}.order-thumb{height:72px;border-radius:8px;object-fit:cover;object-position:70% 34%}.order-card h3{margin:2px 0 4px;font-size:15px}.order-card p{margin:0;color:#846f67;font-size:12px}.order-total{display:flex;align-items:end;justify-content:space-between;margin:20px 2px 12px;padding-top:16px;border-top:1px dashed #e5d9d1}.order-total b{color:#c12028;font-size:26px}.demo-tip{padding:9px 11px;border-radius:7px;color:#7f5b27;background:#fff4d9;font-size:11px}
+    .primary{width:100%;height:50px;margin-top:18px;border:0;border-radius:9px;color:#fff;background:#b31d27;font-weight:800}.back{width:100%;height:38px;margin-top:7px;border:0;color:#88746d;background:transparent;font-size:13px}
+    .pay-options{display:grid;gap:10px}.pay-option{display:flex;align-items:center;gap:12px;width:100%;padding:14px;border:1px solid #eadfd8;border-radius:10px;text-align:left;background:#fff}.pay-option.selected{border-color:#21a65d;box-shadow:0 0 0 2px #21a65d18}.pay-logo{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;color:#fff;background:#1fa861;font-size:18px}.pay-logo.ali{background:#1688e8}.pay-option b{display:block}.pay-option small{color:#907d76}.pay-option:after{content:"";width:18px;height:18px;margin-left:auto;border:1px solid #d6c9c2;border-radius:50%}.pay-option.selected:after{border:5px solid #20a55b}.loading{text-align:center;padding:27px 10px}.spinner{width:48px;height:48px;margin:0 auto 14px;border:4px solid #f1e4dc;border-top-color:#b41e27;border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    .form-field{display:block;margin-bottom:14px}.form-field>span{display:block;margin-bottom:6px;font-size:13px;font-weight:700}.required:before{content:"*";margin-right:3px;color:#dc2b30}.form-field input,.form-field select,.school-trigger,.area-trigger{width:100%;height:46px;padding:0 12px;border:1px solid #ded2cb;border-radius:8px;outline:none;background:#fff;color:#352725;text-align:left}.form-field input:focus,.form-field select:focus,.school-trigger:focus,.area-trigger:focus{border-color:#b82029;box-shadow:0 0 0 3px #b8202914}.school-trigger,.area-trigger{display:flex;align-items:center;justify-content:space-between}.school-trigger.placeholder,.area-trigger.placeholder{color:#9c8d88}.school-trigger:after,.area-trigger:after{content:"›";color:#b82029;font-size:22px}.radio-row{display:flex;gap:9px}.radio-option{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;height:44px;border:1px solid #e0d4cd;border-radius:8px;color:#735f59;background:#fff}.radio-option:has(input:checked){border-color:#b82029;color:#a71822;background:#fff4f3;font-weight:700}.radio-option input{width:auto;height:auto;margin:0;accent-color:#b82029}.agree{display:flex;align-items:flex-start;gap:7px;color:#7f6d66;font-size:11px}.agree input{margin-top:3px;accent-color:#b51f28}.error{display:none;margin:7px 0 0;color:#c21e28;font-size:12px}.error.show{display:block}
+    .sub-mask{position:fixed;z-index:90;inset:0;display:none;align-items:flex-end;justify-content:center;background:#26070c99;backdrop-filter:blur(3px)}.sub-mask.show{display:flex}.sub-sheet{width:min(520px,100%);max-height:88vh;overflow:auto;padding:10px 20px calc(22px + var(--safe-bottom));border-radius:22px 22px 0 0;background:#fff;animation:sheetIn .22s ease-out}.sub-head{display:flex;align-items:center;justify-content:space-between;padding:7px 0 13px}.sub-head h3{margin:0;font-size:20px}.sub-head button{width:34px;height:34px;border:0;border-radius:50%;background:#f4eee9;color:#6e5d58;font-size:20px}.area-line{display:flex;align-items:center;gap:7px;margin-bottom:12px;color:#6b5752;font-size:13px}.area-line b{color:#ad1c25}.school-search{width:100%;height:44px;padding:0 12px;border:1px solid #ddd2cc;border-radius:9px;outline:none}.school-tools{display:flex;justify-content:space-between;align-items:center;margin:13px 0 4px}.school-tools span{color:#85726c;font-size:12px}.text-btn{border:0;color:#b21d27;background:transparent;font-size:13px;font-weight:700}.manual-school{display:none;margin:12px 0}.manual-school.show{display:block}.manual-school input{width:100%;height:46px;padding:0 12px;border:1px solid #d9cec8;border-radius:8px}.school-list{margin:8px -20px 0}.school-item{width:100%;padding:13px 20px;border:0;border-top:1px solid #f0e8e3;text-align:left;background:#fff}.school-item b{display:block;color:#3e302d;font-size:15px}.school-item small{color:#9a8984}.school-empty{display:none;padding:25px;text-align:center;color:#95847e;font-size:13px}
+    .auth-card{width:min(430px,calc(100% - 28px));padding:20px;border-radius:18px;background:#fff;box-shadow:0 20px 65px #2b070d55}.auth-brand{display:flex;align-items:center;gap:10px}.wx-auth-logo{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;color:#fff;background:#08b65b;font-weight:800}.auth-brand b{font-size:16px}.auth-card h3{margin:22px 0 8px;font-size:22px}.auth-card>p{margin:0;color:#7b6963;font-size:13px}.phone-preview{display:flex;align-items:center;justify-content:space-between;margin:18px 0;padding:15px 0;border-top:1px solid #eee5e0;border-bottom:1px solid #eee5e0}.phone-preview b{display:block}.phone-preview small{color:#91817b}.phone-preview i{color:#12a75a;font-size:24px;font-style:normal}.auth-actions{display:grid;grid-template-columns:1fr 1.5fr;gap:10px}.auth-actions button{height:46px;border:0;border-radius:8px;font-weight:700}.auth-cancel{color:#71625d;background:#f2eeec}.auth-allow{color:#fff;background:#08b65b}.auth-note{margin-top:12px!important;text-align:center;color:#a08f89!important;font-size:11px!important}
+    .area-sheet{height:min(78vh,650px);display:flex;flex-direction:column;padding-left:0;padding-right:0}.area-sheet .sub-head{padding:7px 20px 13px}.area-tabs{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid #eee7e2}.area-tab{position:relative;padding:12px 5px;border:0;background:#fff;color:#6e5a55;font-weight:700}.area-tab.active{color:#a71b24}.area-tab.active:after{content:"";position:absolute;left:22%;right:22%;bottom:0;height:3px;border-radius:3px 3px 0 0;background:#b82029}.area-options{flex:1;overflow:auto;padding:7px 0}.area-option{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:48px;padding:10px 20px;border:0;background:#fff;color:#433532;text-align:left;font-size:16px}.area-option.selected{color:#a71922;font-weight:700}.area-option.selected:after{content:"✓";color:#b82029;font-size:21px}.area-option:active{background:#fff5f3}
+    .success{text-align:center}.success-mark{width:58px;height:58px;display:grid;place-items:center;margin:4px auto 12px;border-radius:50%;color:#fff;background:#20a75c;font-size:30px}.success h3{margin:0 0 5px;font-size:21px}.success>p{margin:0 0 12px;color:#7f6c65;font-size:13px}.sms-status{display:flex;align-items:center;justify-content:center;gap:7px;margin:0 0 16px;padding:9px;border-radius:8px;color:#176b40;background:#edf9f2;font-size:12px;font-weight:700}.wechat-box{padding:17px;border-radius:13px;background:#f3fbf6}.qr{display:grid;grid-template-columns:repeat(21,5px);grid-auto-rows:5px;width:105px;height:105px;margin:0 auto 12px;padding:0;background:#fff;box-shadow:0 0 0 9px #fff,0 5px 22px #1b69312a}.qr i{display:block;width:5px;height:5px}.qr i.on{background:#111}.wx-id{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px}.wx-id code{padding:6px 9px;border-radius:5px;background:#fff;color:#265b39;font-family:inherit;font-weight:700}.copy-btn{padding:6px 9px;border:0;border-radius:5px;color:#fff;background:#1fa75b;font-size:12px}.toast{position:fixed;z-index:100;left:50%;bottom:105px;transform:translateX(-50%) translateY(15px);padding:9px 15px;border-radius:999px;color:#fff;background:#1f1817dc;font-size:13px;opacity:0;pointer-events:none;transition:.2s}.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+    @media(max-width:390px){.hero{min-height:590px}.hero-copy{width:68%;padding-left:19px}.hero h1{font-size:38px}.hero h1 span{font-size:31px}.hero-sub{font-size:14px}.trust-ribbon{left:12px;right:12px}.pain-grid{gap:8px}.pain-card{padding:14px 12px}.credentials{grid-template-columns:1fr}}
+    @media(min-width:760px){body{padding:25px 0}.page{border-radius:20px}.sticky{bottom:25px;border-radius:14px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar"><div class="brand"><span class="brand-mark"><i></i></span><span>阿留教育规划</span></div><span class="topbar-badge">家长成长课堂</span></header>
+    <section class="hero">
+      <img class="hero-image" src="./assets/teacher-hero.png" alt="阿留老师" />
+      <div class="hero-copy">
+        <p class="eyebrow">限时家长课</p>
+        <h1>少踩坑<br />会规划<span>孩子成长<br />更有方向</span></h1>
+        <p class="hero-sub">3天直播精华课<br />把教育规划讲清楚</p>
+        <div class="hero-points"><span>直播答疑</span><span>配套测评</span><span>避坑指南</span></div>
+        <div class="price"><strong><small>¥</small>99</strong><del>原价 ¥299</del></div>
+        <p class="price-note">一杯奶茶钱 · 全家可学习</p>
+      </div>
+      <div class="trust-ribbon"><div><b>3天</b><small>直播精讲</small></div><div><b>6类</b><small>完课礼包</small></div><div><b>1对1</b><small>专属答疑</small></div></div>
+    </section>
+    <section class="pain">
+      <header class="section-head"><p class="section-kicker">PARENTING QUESTIONS</p><h2>这些教育难题，你是否也遇到过？</h2><p>不是更努力就一定有效，选对方向比盲目用力更重要。</p></header>
+      <div class="pain-grid">
+        <article class="pain-card"><span class="pain-icon">01</span><h3>信息太多</h3><p>鸡娃、佛系都焦虑，不知道什么才适合自己的孩子。</p></article>
+        <article class="pain-card"><span class="pain-icon">02</span><h3>规划太晚</h3><p>临到升学才准备，关键窗口已经错过。</p></article>
+        <article class="pain-card"><span class="pain-icon">03</span><h3>沟通无效</h3><p>越催越抵触，亲子关系和学习状态一起受影响。</p></article>
+        <article class="pain-card"><span class="pain-icon">04</span><h3>选择困难</h3><p>课程、竞赛、阅读清单，不会判断投入优先级。</p></article>
+      </div>
+    </section>
+
+    <section class="course">
+      <header class="section-head"><p class="section-kicker">3-DAY LIVE CLASS</p><h2>3天建立家庭教育规划框架</h2><p>从看懂孩子，到做出更适合自己家庭的选择。</p></header>
+      <div class="days">
+        <article class="day"><div class="day-no">DAY 1</div><div class="day-body"><h3>看懂成长：避开教育误区</h3><p>建立全龄段教育地图，找到家庭教育的关键抓手。</p></div></article>
+        <article class="day"><div class="day-no">DAY 2</div><div class="day-body"><h3>看懂学习：培养底层能力</h3><p>拆解阅读、表达、数理与习惯培养的优先级。</p></div></article>
+        <article class="day"><div class="day-no">DAY 3</div><div class="day-body"><h3>看懂未来：做好长期规划</h3><p>把孩子特点、家庭资源与升学路径放进一张图。</p></div></article>
+      </div>
+      <div class="course-summary"><span>直播回放</span><span>随堂测评</span><span>行动清单</span></div>
+    </section>
+
+    <section class="gifts">
+      <header class="section-head"><p class="section-kicker">BONUS PACKAGE</p><h2>认真学完，再送你一套资料库</h2><p>覆盖语文、英语、数学与家庭教育规划，学完即可领取。</p></header>
+      <figure class="gift-card"><img src="./assets/course-gifts.png" alt="六类教育规划完课资料礼包" loading="lazy" /><figcaption class="gift-caption"><b>六大类 · 350+ 项精选资源</b><span>完课后领取 ›</span></figcaption></figure>
+    </section>
+
+    <section class="teacher">
+      <header class="section-head"><p class="section-kicker">YOUR INSTRUCTOR</p><h2>不是贩卖焦虑，而是帮你看清方向</h2></header>
+      <article class="teacher-panel">
+        <div class="teacher-name"><img class="teacher-avatar" src="./assets/teacher-hero.png" alt="阿留老师头像" /><div><h3>阿留老师</h3><p>「全龄段教育规划」开创者</p></div></div>
+        <div class="credentials"><span>✓ 专注家庭教育规划</span><span>✓ 体系化直播精讲</span><span>✓ 陪伴家长解决问题</span><span>✓ 重视方法落地执行</span></div>
+      </article>
+    </section>
+
+    <section class="voices">
+      <header class="section-head"><p class="section-kicker">PARENT REVIEWS</p><h2>家长们学完这样说</h2></header>
+      <article class="voice"><div class="voice-head"><span class="avatar-letter">陈</span><b>小学生妈妈</b><span>★★★★★</span></div><p>以前总想把所有好资源都给孩子，听完才知道做减法更重要，终于有了清晰的安排。</p></article>
+      <article class="voice"><div class="voice-head"><span class="avatar-letter">周</span><b>初中生爸爸</b><span>★★★★★</span></div><p>课程没有喊口号，三天都给了可以落地的方法。现在和孩子聊学习不再只剩催促。</p></article>
+      <div class="promise"><div><b>3天</b><span>集中学习</span></div><div><b>永久</b><span>资料留存</span></div><div><b>专属</b><span>班主任服务</span></div></div>
+    </section>
+
+    <section class="faq">
+      <header class="section-head"><p class="section-kicker">FAQ</p><h2>报名前，你可能还想问</h2></header>
+      <details open><summary>上课时间不方便怎么办？</summary><p>报名后会进入专属学习群，具体开课时间以班主任通知为准。</p></details>
+      <details><summary>适合哪个年龄段孩子的家长？</summary><p>课程采用全龄段规划视角，小学到初高中阶段的家长均可学习，并结合自家情况落地。</p></details>
+      <details><summary>付款后如何上课？</summary><p>支付成功后填写学生信息并完成微信授权，再添加班主任微信，班主任会发送上课方式与学习提醒。</p></details>
+    </section>
+
+    <section class="closing"><h2>给孩子更好的选择<br />让部分家长先看到未来</h2><p>名额按班级开放，满班即止</p></section>
+  </main>
+
+  <aside class="sticky"><div class="sticky-price"><small>限时体验价</small><b><i>¥</i>99</b></div><button class="buy-btn" data-buy>立即抢名额<span>下单后添加班主任微信</span></button></aside>
+
+  <div class="mask" id="checkout" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <div class="sheet">
+      <div class="sheet-handle"></div>
+      <header class="sheet-head"><h2 id="sheet-title">确认报名</h2><button class="close" aria-label="关闭">×</button></header>
+      <nav class="steps" aria-label="报名进度"><div class="step active"><i>1</i>下单</div><div class="step"><i>2</i>支付</div><div class="step"><i>3</i>信息</div><div class="step"><i>4</i>加微信</div></nav>
+
+      <section class="stage active" data-stage="1">
+        <div class="order-card"><img class="order-thumb" src="./assets/teacher-hero.png" alt="课程封面" /><div><h3>阿留状元教育 · 3天精华家长课</h3><p>直播精讲 + 随堂测评 + 完课资料礼包</p></div></div>
+        <div class="order-total"><span>应付金额</span><b>¥99.00</b></div>
+        <p class="demo-tip">演示说明：本页面为产品原型，不会产生真实扣款。</p>
+        <button class="primary" data-next>确认订单，去支付</button>
+      </section>
+
+      <section class="stage" data-stage="2">
+        <div class="pay-options"><button class="pay-option selected" data-pay="微信支付"><span class="pay-logo">微</span><span><b>微信支付</b><small>推荐使用</small></span></button><button class="pay-option" data-pay="支付宝"><span class="pay-logo ali">支</span><span><b>支付宝</b><small>安全快捷</small></span></button></div>
+        <div id="pay-actions"><button class="primary" data-pay-submit>模拟支付 ¥99.00</button><button class="back" data-back>返回修改订单</button></div>
+        <div class="loading" id="pay-loading" hidden><div class="spinner"></div><b>正在确认支付结果…</b><p style="color:#8a756e;font-size:12px">请不要关闭页面</p></div>
+      </section>
+
+      <section class="stage" data-stage="3">
+        <form id="lead-form" novalidate>
+          <div class="form-field"><span class="required">学校区域</span><input type="hidden" name="schoolArea" id="school-area" value="广东省/深圳市/宝安区" /><button class="area-trigger" id="area-trigger" type="button">广东省 / 深圳市 / 宝安区</button></div>
+          <div class="form-field"><span class="required">学校名称</span><input type="hidden" name="schoolName" id="school-name" /><button class="school-trigger placeholder" id="school-trigger" type="button">请选择或输入学校</button></div>
+          <div class="form-field"><span class="required">是否住校</span><div class="radio-row"><label class="radio-option"><input type="radio" name="boarding" value="是" />是</label><label class="radio-option"><input type="radio" name="boarding" value="否" checked />否</label></div></div>
+          <label class="form-field"><span class="required">学生姓名</span><input name="studentName" autocomplete="name" maxlength="20" placeholder="请输入20字以内的汉字或英文" /></label>
+          <label class="form-field"><span class="required">孩子年级</span><select name="grade"><option value="">请选择孩子年级</option><option>学龄前</option><option>小学1—3年级</option><option>小学4—6年级</option><option>初中</option><option>高中</option></select></label>
+          <label class="agree"><input type="checkbox" name="agree" />我已阅读并同意《用户服务协议》和《隐私政策》，同意接收与课程相关的服务通知。</label>
+          <p class="error" id="form-error">请完整填写信息，并勾选同意协议。</p>
+          <button class="primary" type="submit">提交信息，领取课程</button>
+          <button class="back" type="button" data-back>返回支付方式</button>
+        </form>
+      </section>
+
+      <section class="stage success" data-stage="4">
+        <div class="success-mark">✓</div><h3>报名成功</h3><p>请添加班主任微信，获取直播入口和完课礼包。</p>
+        <div class="sms-status">✓ 短信已发送至微信绑定手机号</div>
+        <div class="wechat-box"><div class="qr" id="qr" aria-label="班主任微信二维码演示图"></div><b>长按识别二维码添加班主任</b><div class="wx-id"><span>微信号</span><code id="wx-code">AliuTeacher2026</code><button class="copy-btn" id="copy">复制</button></div></div>
+        <p class="demo-tip" style="margin-top:15px">演示二维码不可真实添加；正式上线时替换为企业微信活码。</p>
+        <button class="primary" id="done">完成</button>
+      </section>
+    </div>
+  </div>
+
+  <div class="sub-mask" id="area-picker" role="dialog" aria-modal="true" aria-labelledby="area-title">
+    <div class="sub-sheet area-sheet">
+      <header class="sub-head"><h3 id="area-title">请选择学校所在区域</h3><button type="button" data-area-close aria-label="关闭">×</button></header>
+      <nav class="area-tabs" aria-label="区域选择层级"><button class="area-tab" type="button" data-area-step="0">广东省</button><button class="area-tab" type="button" data-area-step="1">深圳市</button><button class="area-tab active" type="button" data-area-step="2">宝安区</button></nav>
+      <div class="area-options" id="area-options"></div>
+    </div>
+  </div>
+
+  <div class="sub-mask" id="school-picker" role="dialog" aria-modal="true" aria-labelledby="school-title">
+    <div class="sub-sheet">
+      <header class="sub-head"><h3 id="school-title">请选择学校</h3><button type="button" data-school-close aria-label="关闭">×</button></header>
+      <div class="area-line"><b>●</b><span id="picker-area">广东省 / 深圳市 / 宝安区</span></div>
+      <input class="school-search" id="school-search" placeholder="搜索学校名称" />
+      <div class="school-tools"><span>请选择搜索结果</span><button class="text-btn" id="manual-toggle" type="button">手动输入学校</button></div>
+      <div class="manual-school" id="manual-school"><input id="manual-school-input" maxlength="40" placeholder="请输入完整学校名称" /><button class="primary" id="manual-school-confirm" type="button">确认学校名称</button></div>
+      <div class="school-list" id="school-list">
+        <button class="school-item" type="button" data-school="万丰小学"><b>万丰小学</b><small>宝安区</small></button>
+        <button class="school-item" type="button" data-school="万宏学校"><b>万宏学校</b><small>宝安区</small></button>
+        <button class="school-item" type="button" data-school="三联永恒学校"><b>三联永恒学校</b><small>宝安区</small></button>
+        <button class="school-item" type="button" data-school="上合小学"><b>上合小学</b><small>宝安区</small></button>
+        <button class="school-item" type="button" data-school="东升实验学校"><b>东升实验学校</b><small>宝安区</small></button>
+        <button class="school-item" type="button" data-school="东周小学"><b>东周小学</b><small>宝安区</small></button>
+        <button class="school-item" type="button" data-school="东山书院"><b>东山书院</b><small>宝安区</small></button>
+      </div>
+      <div class="school-empty" id="school-empty">没有找到学校，可点击“手动输入学校”</div>
+    </div>
+  </div>
+
+  <div class="sub-mask" id="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+    <div class="auth-card">
+      <div class="auth-brand"><span class="wx-auth-logo">微</span><b>阿留教育规划 申请</b></div>
+      <h3 id="auth-title">获取手机号及微信授权</h3>
+      <p>用于发送开课短信、匹配学习服务和班主任跟进。</p>
+      <div class="phone-preview"><div><b>138 **** 8000</b><small>微信绑定号码（演示）</small></div><i>✓</i></div>
+      <div class="auth-actions"><button class="auth-cancel" id="auth-cancel" type="button">暂不授权</button><button class="auth-allow" id="auth-allow" type="button">允许并继续</button></div>
+      <p class="auth-note">Demo 将模拟微信授权和短信触发，不会真实发送。</p>
+    </div>
+  </div>
+  <div class="toast" id="toast">已复制微信号</div>
+
+  <script>
+    (()=>{
+      const mask=document.querySelector('#checkout');
+      const title=document.querySelector('#sheet-title');
+      const stages=[...document.querySelectorAll('.stage')];
+      const steps=[...document.querySelectorAll('.step')];
+      const areaPicker=document.querySelector('#area-picker');
+      const areaTrigger=document.querySelector('#area-trigger');
+      const areaInput=document.querySelector('#school-area');
+      const schoolPicker=document.querySelector('#school-picker');
+      const authDialog=document.querySelector('#auth-dialog');
+      const schoolNameInput=document.querySelector('#school-name');
+      const schoolTrigger=document.querySelector('#school-trigger');
+      const toast=document.querySelector('#toast');
+      let preAuth=JSON.parse(sessionStorage.getItem('aliu_pre_auth')||'null');
+      let pendingLead=null;
+      let current=1;
+      let areaStep=2;
+      let selectedArea=['广东省','深圳市','宝安区'];
+      const areaData={
+        '广东省':{
+          '深圳市':['罗湖区','福田区','南山区','宝安区','龙岗区','盐田区','龙华区','坪山区','光明区'],
+          '广州市':['越秀区','海珠区','荔湾区','天河区','白云区','黄埔区','番禺区'],
+          '佛山市':['禅城区','南海区','顺德区','三水区','高明区'],
+          '东莞市':['东莞市']
+        },
+        '浙江省':{
+          '杭州市':['上城区','拱墅区','西湖区','滨江区','萧山区','余杭区'],
+          '宁波市':['海曙区','江北区','北仑区','鄞州区']
+        },
+        '江苏省':{
+          '南京市':['玄武区','秦淮区','建邺区','鼓楼区','雨花台区'],
+          '苏州市':['姑苏区','吴中区','相城区','虎丘区']
+        }
+      };
+      const titles=['确认报名','选择支付方式','填写领取信息','添加班主任微信'];
+      const params=Object.fromEntries(new URLSearchParams(location.search));
+      sessionStorage.setItem('aliu_campaign',JSON.stringify({source:params.utm_source||'direct',medium:params.utm_medium||'',campaign:params.utm_campaign||'',landingAt:new Date().toISOString()}));
+
+      function showStage(n){current=n;stages.forEach((el,i)=>el.classList.toggle('active',i===n-1));steps.forEach((el,i)=>el.classList.toggle('active',i<n));title.textContent=titles[n-1];document.querySelector('.sheet').scrollTop=0}
+      function open(){mask.classList.add('show');document.body.style.overflow='hidden';showStage(1)}
+      function close(){mask.classList.remove('show');areaPicker.classList.remove('show');schoolPicker.classList.remove('show');authDialog.classList.remove('show');document.body.style.overflow=''}
+      function showToast(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),1800)}
+      function chooseSchool(name){schoolNameInput.value=name;schoolTrigger.textContent=name;schoolTrigger.classList.remove('placeholder');schoolPicker.classList.remove('show')}
+      function finishLead(){
+        if(!pendingLead||!preAuth)return;
+        const completed={...pendingLead,...preAuth,smsTriggered:true,submittedAt:new Date().toISOString()};
+        sessionStorage.setItem('aliu_lead_demo',JSON.stringify(completed));
+        pendingLead=null;
+        authDialog.classList.remove('show');
+        showStage(4);
+        showToast('提交成功，开课短信已触发');
+      }
+      function renderAreaPicker(){
+        const tabs=[...document.querySelectorAll('[data-area-step]')];
+        const fallback=['请选择省份','请选择城市','请选择区县'];
+        tabs.forEach((tab,index)=>{tab.textContent=selectedArea[index]||fallback[index];tab.classList.toggle('active',index===areaStep);tab.disabled=index===1&&!selectedArea[0]||index===2&&!selectedArea[1]});
+        let options=[];
+        if(areaStep===0)options=Object.keys(areaData);
+        if(areaStep===1)options=Object.keys(areaData[selectedArea[0]]||{});
+        if(areaStep===2)options=(areaData[selectedArea[0]]||{})[selectedArea[1]]||[];
+        document.querySelector('#area-options').innerHTML=options.map(name=>`<button class="area-option ${selectedArea[areaStep]===name?'selected':''}" type="button" data-area-item="${name}">${name}</button>`).join('');
+      }
+      function confirmArea(){
+        const value=selectedArea.join('/');
+        areaInput.value=value;
+        areaTrigger.textContent=selectedArea.join(' / ');
+        areaTrigger.classList.remove('placeholder');
+        schoolNameInput.value='';
+        schoolTrigger.textContent='请选择或输入学校';
+        schoolTrigger.classList.add('placeholder');
+        document.querySelectorAll('.school-item small').forEach(el=>el.textContent=selectedArea[2]);
+        areaPicker.classList.remove('show');
+      }
+      document.querySelectorAll('[data-buy]').forEach(b=>b.addEventListener('click',open));
+      document.querySelector('.close').addEventListener('click',close);
+      mask.addEventListener('click',e=>{if(e.target===mask)close()});
+      document.querySelector('[data-next]').addEventListener('click',()=>showStage(2));
+      document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>showStage(Math.max(1,current-1))));
+      document.querySelectorAll('.pay-option').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.pay-option').forEach(x=>x.classList.remove('selected'));b.classList.add('selected')}));
+      document.querySelector('[data-pay-submit]').addEventListener('click',()=>{document.querySelector('#pay-actions').hidden=true;document.querySelector('#pay-loading').hidden=false;setTimeout(()=>{document.querySelector('#pay-actions').hidden=false;document.querySelector('#pay-loading').hidden=true;showStage(3)},900)});
+      areaTrigger.addEventListener('click',()=>{areaStep=2;renderAreaPicker();areaPicker.classList.add('show')});
+      document.querySelectorAll('[data-area-close]').forEach(b=>b.addEventListener('click',()=>areaPicker.classList.remove('show')));
+      document.querySelectorAll('[data-area-step]').forEach(tab=>tab.addEventListener('click',()=>{const target=Number(tab.dataset.areaStep);if(target===0||target===1&&selectedArea[0]||target===2&&selectedArea[1]){areaStep=target;renderAreaPicker()}}));
+      document.querySelector('#area-options').addEventListener('click',e=>{const item=e.target.closest('[data-area-item]');if(!item)return;const value=item.dataset.areaItem;if(areaStep===0){selectedArea=[value,'',''];areaStep=1;renderAreaPicker();return}if(areaStep===1){selectedArea=[selectedArea[0],value,''];areaStep=2;renderAreaPicker();return}selectedArea[2]=value;confirmArea()});
+      areaPicker.addEventListener('click',e=>{if(e.target===areaPicker)areaPicker.classList.remove('show')});
+      schoolTrigger.addEventListener('click',()=>{const area=document.querySelector('[name="schoolArea"]').value.trim();document.querySelector('#picker-area').textContent=area.replaceAll('/',' / ')||'请先填写学校区域';schoolPicker.classList.add('show');document.querySelector('#school-search').focus()});
+      document.querySelectorAll('[data-school-close]').forEach(b=>b.addEventListener('click',()=>schoolPicker.classList.remove('show')));
+      document.querySelectorAll('[data-school]').forEach(b=>b.addEventListener('click',()=>chooseSchool(b.dataset.school)));
+      document.querySelector('#manual-toggle').addEventListener('click',()=>{document.querySelector('#manual-school').classList.toggle('show');document.querySelector('#manual-school-input').focus()});
+      document.querySelector('#manual-school-confirm').addEventListener('click',()=>{const value=document.querySelector('#manual-school-input').value.trim();if(value)chooseSchool(value);else showToast('请输入学校名称')});
+      document.querySelector('#school-search').addEventListener('input',e=>{const keyword=e.target.value.trim().toLowerCase();let count=0;document.querySelectorAll('[data-school]').forEach(item=>{const visible=item.dataset.school.toLowerCase().includes(keyword);item.hidden=!visible;if(visible)count++});document.querySelector('#school-empty').style.display=count?'none':'block'});
+      schoolPicker.addEventListener('click',e=>{if(e.target===schoolPicker)schoolPicker.classList.remove('show')});
+      document.querySelector('#lead-form').addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(e.currentTarget);const name=String(fd.get('studentName')||'').trim();const valid=String(fd.get('schoolArea')||'').trim()&&fd.get('schoolName')&&fd.get('boarding')&&/^[\u4e00-\u9fa5A-Za-z·\s]{1,20}$/.test(name)&&fd.get('grade')&&fd.get('agree');document.querySelector('#form-error').classList.toggle('show',!valid);if(valid){pendingLead={schoolArea:fd.get('schoolArea'),schoolName:fd.get('schoolName'),boarding:fd.get('boarding'),studentName:name,grade:fd.get('grade'),source:params.utm_source||'direct'};if(preAuth)finishLead();else authDialog.classList.add('show')}});
+      document.querySelector('#auth-cancel').addEventListener('click',()=>authDialog.classList.remove('show'));
+      document.querySelector('#auth-allow').addEventListener('click',()=>{preAuth={phoneMasked:'138****8000',wechatAuthorized:true,authorizedAt:new Date().toISOString()};sessionStorage.setItem('aliu_pre_auth',JSON.stringify(preAuth));if(pendingLead)finishLead();else{authDialog.classList.remove('show');showToast('授权成功，可继续了解课程')}});
+      const qr=document.querySelector('#qr');for(let y=0;y<21;y++){for(let x=0;x<21;x++){const el=document.createElement('i');const finder=(ox,oy)=>x>=ox&&x<ox+7&&y>=oy&&y<oy+7&&(x===ox||x===ox+6||y===oy||y===oy+6||(x>=ox+2&&x<=ox+4&&y>=oy+2&&y<=oy+4));const random=((x*11+y*7+x*y*3)%13)<6;if(finder(0,0)||finder(14,0)||finder(0,14)||(random&&!(x<8&&y<8)&&!(x>12&&y<8)&&!(x<8&&y>12)))el.className='on';qr.appendChild(el)}}
+      document.querySelector('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(document.querySelector('#wx-code').textContent)}catch(e){}showToast('已复制微信号')});
+      document.querySelector('#done').addEventListener('click',close);
+      setTimeout(()=>authDialog.classList.add('show'),120);
+    })();
+  </script>
+</body>
+</html>
